@@ -16,7 +16,7 @@ Corevar is a  is a workflow for core-genome comparison betweenn different clades
 # Corevar workflow
 ![](workflow.jpg?raw=true "Corevar workflow")
 * Flowcharts of the steps in the application of the Corevar. (A) Unique CDS analysis workflow. (B) Core-SNP and core-upstream-SNP analysis workflow.
-# Quick Start (run it on Linuc system)
+# Quick Start (run it on Linux system)
 ## xiao_robot_match_classify_CDS.py
 
 ## xiao_robot_extract_CDS.py
