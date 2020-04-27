@@ -1,8 +1,8 @@
-"""this is a robot used to analysis the SNP between different strain groups. Tying to find the conserved SNP cases between the groups. 
-1. extract specific CDS from strains and combine
-2. Alignment with PRANK
-3. SNP-sites
-4. get score"""
+"""this is a robot used to analysis the SNP between different bacteria strain clades. Tying to find the conserved SNP (core-SNP) cases between the user defined clades. 
+1. extract core CDS in every strains according core CDS reference
+2. multiple sequence alignment of each core CDS for all the strains by the program PRANK or MAFFT
+3. SNP variation analysed by SNP-sites
+4. caculate score"""
 
 import sys
 import subprocess
@@ -16,10 +16,10 @@ def parse_args():
     parser=argparse.ArgumentParser(description="Welcome to use Xiao_Fei_Robot")
     parser.add_argument('--CDS_LIST', required=True, type=str, metavar='FILENAME', help="the CDS list you want to extract")
     parser.add_argument('--STRAIN_LIST', required=True, type=str, metavar='FILENAME', help="the strain list you want to extract from the fasta files (each file comtain all the CDS of a strain)")
-    parser.add_argument('--GROUP_1', required=True, type=str, metavar='FILENAME', help="the strain (fasta files name) list you want to caculate as one group")
-    parser.add_argument('--GROUP_2', required=True, type=str, metavar='FILENAME', help="the strain (fasta files name) list you want to caculate as one group")
+    parser.add_argument('--GROUP_1', required=True, type=str, metavar='FILENAME', help="the strain (fasta files name) list you want to caculate as one clade")
+    parser.add_argument('--GROUP_2', required=True, type=str, metavar='FILENAME', help="the strain (fasta files name) list you want to caculate as one clade")
     parser.add_argument('--TEMP_SAVE', action='store_const', const=True, metavar='SAVE_SOME_TEMP', help="this command help to save some temp infomation or files")
-    parser.add_argument('--FAST', action='store_const', const=True, metavar='FAST ALIGNMENT WITH MAFFT', help="this command help to use mafft to do a fast alignment")
+    parser.add_argument('--FAST', action='store_const', const=True, metavar='FAST ALIGNMENT WITH MAFFT', help="this command help to use MAFFT to do a fast alignment")
     #parser.add_argument('--CUT', default=100, type=int, metavar='up-stream cut length', help="the length(bp) you want to cut upstream of the CDS")
     parser.add_argument('--OUT', default="xiao_robot_SNP_analysis_between_groups", type=str, metavar='directory', help="Output directory name")
     return parser.parse_args()
