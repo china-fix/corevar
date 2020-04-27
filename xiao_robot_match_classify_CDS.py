@@ -1,5 +1,5 @@
 '''
-This robot can help to locally blastn the CDS.fasta to the reference genome and filter the orginal CDS.fasta to matched_CDS and un_matched_CDS  
+This robot can help to locally blastn the CDS.fasta to the reference genome and filter the orginal CDS.fasta to matched_CDS.fasta and un_matched_CDS.fasta  
 '''
 
 import subprocess
