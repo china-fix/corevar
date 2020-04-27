@@ -17,7 +17,7 @@ def parse_args():
     parser=argparse.ArgumentParser(description="Welcome to use Xiao_Fei_Robot")
     parser.add_argument('--CDS', required=True, type=str, metavar='FILENAME', help="the CDS fasta filename you want to blast")
     parser.add_argument('--DB', required=True, type=str, metavar='FILENAME', help="the database name in the command blastn -db")
-    parser.add_argument('--WASH_LIST', required=True, type=str, metavar='FILENAME', help="the filename list you want to wash and get the upstream of CDS only")
+    parser.add_argument('--WASH_LIST', required=True, type=str, metavar='FILENAME', help="the filename (bacteria strain fasta assemblies) list you want to get the upstream sequence of relative CDS")
     parser.add_argument('--CUT', default=100, type=int, metavar='up-stream cut length', help="the length(bp) you want to cut upstream of the CDS")
     parser.add_argument('--OUT', default="xiao_robot_extract_beside_CDS", type=str, metavar='directory', help="Output directory name")
     return parser.parse_args()
