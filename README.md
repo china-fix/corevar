@@ -18,6 +18,17 @@ Corevar is a  is a workflow for core-genome comparison betweenn different clades
 * Flowcharts of the steps in the application of the Corevar. (A) Unique CDS analysis workflow. (B) Core-SNP and core-upstream-SNP analysis workflow.
 # Quick Start (run it on Linux system)
 ## xiao_robot_match_classify_CDS.py
+* This is a python script to locally blastn the CDS.fasta to the reference genome and filter the orginal CDS.fasta to matched_CDS.fasta and un_matched_CDS.fasta  
+
+Usage: pyhon3 xiao_robot_match_classify_CDS.py
+
+    --CDS (required=True, type=str, metavar='FILENAME', help="the CDS fasta filename you want to blast")
+    
+    --REF (required=True, type=str, metavar='FILENAME', help="the complete reference genome of fasta format you want to blast to")
+    
+    --CUTOFF (default=0.9, type=float, metavar='DEFAULT 0.9', help="the lowest similarity value which classify as matched")
+    
+    --OUT (default="xiao_robot_match_classify_CDS", type=str, metavar='directory', help="Output directory name")
 
 ## xiao_robot_extract_CDS.py
 
@@ -33,12 +44,19 @@ Corevar is a  is a workflow for core-genome comparison betweenn different clades
 Usage: python3 xiao_robot_SNP_analysis_between_groups.py
 
     --CDS_LIST (required=True, type=str, metavar='FILENAME', help="the CDS list you want to extract")
+    
     --STRAIN_LIST (required=True, type=str, metavar='FILENAME', help="the strain list you want to extract from the fasta files (each file comtain all the CDS of a strain)")
+    
     --GROUP_1 (required=True, type=str, metavar='FILENAME', help="the strain (fasta files name) list you want to caculate as one clade")
+    
     --GROUP_2 (required=True, type=str, metavar='FILENAME', help="the strain (fasta files name) list you want to caculate as one clade")
+    
     --TEMP_SAVE (action='store_const', const=True, metavar='SAVE_SOME_TEMP', help="this command help to save some temp infomation or files")
+    
     --FAST (action='store_const', const=True, metavar='FAST ALIGNMENT WITH MAFFT', help="this command help to use MAFFT to do a fast alignment")
+    
     --CUT (default=100, type=int, metavar='up-stream cut length', help="the length(bp) you want to cut upstream of the CDS")
+    
     --OUT (default="xiao_robot_SNP_analysis_between_groups", type=str, metavar='directory', help="Output directory name")
 
  
