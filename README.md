@@ -31,6 +31,17 @@ Usage: pyhon3 xiao_robot_match_classify_CDS.py
     --OUT (default="xiao_robot_match_classify_CDS", type=str, metavar='directory', help="Output directory name")
 
 ## xiao_robot_extract_CDS.py
+* This python script is modified from the script of xiao_robot_extract_beside_CDS. Script do blastn and extract the CDS in each strain.
+
+Usage: python3 xiao_robot_extract_CDS.py
+
+    --CDS (required=True, type=str, metavar='FILENAME', help="the CDS fasta filename you want to extract")
+    
+    --DB (required=True, type=str, metavar='FILENAME', help="the database name in the command blastn -db")
+    
+    --WASH_LIST (required=True, type=str, metavar='FILENAME', help="the filename (bacteria strain fasta assemblies) list you want to get the CDS")
+    
+    --OUT (default="xiao_robot_extract_CDS", type=str, metavar='directory', help="Output directory name")
 
 ## xiao_extract_beside_CDS.py
 
