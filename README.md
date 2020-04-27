@@ -44,6 +44,19 @@ Usage: python3 xiao_robot_extract_CDS.py
     --OUT (default="xiao_robot_extract_CDS", type=str, metavar='directory', help="Output directory name")
 
 ## xiao_extract_beside_CDS.py
+* This python script is used to blastn the input CDS fasta file to the assembly database, then get the location and other hsp information. Finally, extract the upstream CDS sequences in every bascteria assemblies.
+
+Usage: pyhon3 xiao_extract_beside_CDS.py
+
+    --CDS (required=True, type=str, metavar='FILENAME', help="the CDS fasta filename you want to blast")
+    
+    --DB (required=True, type=str, metavar='FILENAME', help="the database name in the command blastn -db")
+    
+    --WASH_LIST (required=True, type=str, metavar='FILENAME', help="the filename (bacteria strain fasta assemblies) list you want to get the upstream sequence of relative CDS")
+    
+    --CUT (default=100, type=int, metavar='up-stream cut length', help="the length(bp) you want to cut upstream of the CDS")
+    
+    --OUT (default="xiao_robot_extract_beside_CDS", type=str, metavar='directory', help="Output directory name")
 
 ## xiao_robot_SNP_analysis_between_groups.py
 * This is a python script used to analysis the SNP between different bacteria strain clades. Tying to find the conserved SNP (core-SNP) cases between the user defined clades. 
