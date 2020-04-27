@@ -24,4 +24,21 @@ Corevar is a  is a workflow for core-genome comparison betweenn different clades
 ## xiao_extract_beside_CDS.py
 
 ## xiao_robot_SNP_analysis_between_groups.py
+* This is a python script used to analysis the SNP between different bacteria strain clades. Tying to find the conserved SNP (core-SNP) cases between the user defined clades. 
+1. extract core CDS in every strains according core CDS reference
+2. multiple sequence alignment of each core CDS for all the strains by the program PRANK or MAFFT
+3. SNP variation analysed by SNP-sites
+4. caculate score
 
+Usage: python3 xiao_robot_SNP_analysis_between_groups.py
+
+    --CDS_LIST (required=True, type=str, metavar='FILENAME', help="the CDS list you want to extract")
+    --STRAIN_LIST (required=True, type=str, metavar='FILENAME', help="the strain list you want to extract from the fasta files (each file comtain all the CDS of a strain)")
+    --GROUP_1 (required=True, type=str, metavar='FILENAME', help="the strain (fasta files name) list you want to caculate as one clade")
+    --GROUP_2 (required=True, type=str, metavar='FILENAME', help="the strain (fasta files name) list you want to caculate as one clade")
+    --TEMP_SAVE (action='store_const', const=True, metavar='SAVE_SOME_TEMP', help="this command help to save some temp infomation or files")
+    --FAST (action='store_const', const=True, metavar='FAST ALIGNMENT WITH MAFFT', help="this command help to use MAFFT to do a fast alignment")
+    --CUT (default=100, type=int, metavar='up-stream cut length', help="the length(bp) you want to cut upstream of the CDS")
+    --OUT (default="xiao_robot_SNP_analysis_between_groups", type=str, metavar='directory', help="Output directory name")
+
+ 
