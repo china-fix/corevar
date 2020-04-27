@@ -14,3 +14,4 @@ Corevar is a  is a workflow for core-genome comparison betweenn different clades
 7. [SNP-sites](https://github.com/sanger-pathogens/snp-sites);
 8. [blastn 2.6.0+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
 # Corevar workflow
+![](workflow.jpg?raw=true "Corevar workflow")
