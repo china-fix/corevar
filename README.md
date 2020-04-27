@@ -82,5 +82,6 @@ Usage: python3 xiao_robot_SNP_analysis_between_groups.py
     --CUT (default=100, type=int, metavar='up-stream cut length', help="the length(bp) you want to cut upstream of the CDS")
     
     --OUT (default="xiao_robot_SNP_analysis_between_groups", type=str, metavar='directory', help="Output directory name")
+# Citation
 
  
