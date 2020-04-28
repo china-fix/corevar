@@ -1,6 +1,6 @@
 # Corevar
 bacteria core-genome comparison betweenn different clades.
-# introduction
+# Introduction
 Corevar is a  is a workflow for core-genome comparison betweenn different clades from raw sequencing reads or genome assemblies.
 # Dependencies
 1. [python 3.6.9](https://www.python.org/) and following librarires are required:
