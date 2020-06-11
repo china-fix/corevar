@@ -32,7 +32,7 @@ Usage: python3 xiao_robot_match_classify_CDS.py
 * input/output files format:
     * input files format:
         * --REF refered file is a fasta formated genome assemlies.
-        * --CDS refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa'file. Example looks like below:
+        * --CDS refered file is a fasta formated file of CDS. The nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa' file. Example looks like below:
     
     ```
     >YZU0001_00006 sodC_1
@@ -58,7 +58,7 @@ Usage: python3 xiao_robot_match_classify_CDS.py
     GCGCCGCTGGAAAATGCGTTGGCGCATGTTAAGACCATCATTGCAACGCCTGAGCAGTAA
     ```
     * output file format:
-        * --OUT refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa'file.
+        * --OUT refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa' file.
 
 ## xiao_robot_extract_CDS.py
 * This python script is modified from the script of xiao_robot_extract_beside_CDS. Script do blastn and extract the CDS in each strain.
@@ -75,8 +75,8 @@ Usage: python3 xiao_robot_extract_CDS.py
 * input/output files format:
     * input files format:
         * strain files: put all the fasta formated assemblies in script's working directory.
-        * --CDS refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa'file.
-        * --WASH_LIST refered file is a list name text file. each name corresponding one strain file's name. Example looks like below
+        * --CDS refered file is a fasta formated file of CDS. The nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa' file.
+        * --WASH_LIST refered file is a name list text file. Each name corresponding one strain file's name. Example looks like below
     
     ```
     A.fasta
@@ -85,7 +85,7 @@ Usage: python3 xiao_robot_extract_CDS.py
     ...
     ```
     * output file format:
-        * --OUT refered directory contain the output files. output files are fasta formated of CDS of the strains.
+        * --OUT refered directory contain the output files. Output files are fasta formated of CDS of the strains.
 
 ## xiao_extract_beside_CDS.py
 * This python script is used to blastn the input CDS fasta file to the assembly database, then get the location and other hsp information. Finally, extract the upstream CDS sequences in every bascteria assemblies.
@@ -104,8 +104,8 @@ Usage: pyhon3 xiao_extract_beside_CDS.py
 * input/output files format:
     * input files format:
         * strain files: put all the fasta formated assemblies in script's working directory.
-        * --CDS refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa'file.
-        * --WASH_LIST refered file is a list name text file. each name corresponding one strain file's name. Example looks like below
+        * --CDS refered file is a fasta formated file of CDS. The nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa' file.
+        * --WASH_LIST refered file is a name list text file. Each name corresponding one strain file's name. Example looks like below
     
     ```
     A.fasta
@@ -114,7 +114,7 @@ Usage: pyhon3 xiao_extract_beside_CDS.py
     ...
     ```
     * output file format:
-        * --OUT refered directory contain the output files. output files are fasta formated of upstream sequences of the strains.
+        * --OUT refered directory contain the output files. Output files are fasta formated of upstream sequences of the strains.
     
 
 ## xiao_robot_SNP_analysis_between_groups.py
@@ -148,7 +148,7 @@ Usage: python3 xiao_robot_SNP_analysis_between_groups.py
         * --GROUP_2 refered file is a name list text file. Each name corresponding one strain CDS file's name.
     
     * output file format:
-        * --OUT refered directory contain the output files. The analysis result recored in the '*.XIAO' file, the format looks like below. ([CDS name] + "---FIX---" + [core SNP number] + "---FIX---" + [passed or error information])
+        * --OUT refered directory contain the output files. The analysis result recored in the '*.XIAO' file, the format example looks like below. ([CDS name] + "---FIX---" + [core SNP number] + "---FIX---" + [passed or error information])
          ```
         purG---FIX---0---FIX---###passed
         melB_1---FIX---5---FIX---###passed
