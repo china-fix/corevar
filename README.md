@@ -1,7 +1,7 @@
 # Corevar
-bacteria core-genome comparison betweenn different clades.
+bacteria core-genome comparison between different clades.
 # Introduction
-Corevar is a  is a workflow for core-genome comparison betweenn different clades from raw sequencing reads or genome assemblies.
+Corevar is a workflow for core-genome comparison between different clades from raw sequencing reads or genome assemblies.
 # Dependencies
 1. [python 3.6.9](https://www.python.org/) and following librarires are required:
 * [Biopython 1.74](https://biopython.org/)
@@ -20,7 +20,7 @@ Corevar is a  is a workflow for core-genome comparison betweenn different clades
 ## xiao_robot_match_classify_CDS.py
 * This is a python script to locally blastn the CDS.fasta to the reference genome and filter the orginal CDS.fasta to matched_CDS.fasta and un_matched_CDS.fasta  
 
-Usage: pyhon3 xiao_robot_match_classify_CDS.py
+Usage: python3 xiao_robot_match_classify_CDS.py
 
     --CDS (required=True, type=str, metavar='FILENAME', help="the CDS fasta filename you want to blast")
     
@@ -59,11 +59,11 @@ Usage: pyhon3 xiao_extract_beside_CDS.py
     --OUT (default="xiao_robot_extract_beside_CDS", type=str, metavar='directory', help="Output directory name")
 
 ## xiao_robot_SNP_analysis_between_groups.py
-* This is a python script used to analysis the SNP between different bacteria strain clades. Tying to find the conserved SNP (core-SNP) cases between the user defined clades. 
+* This is a python script used to analysis the SNP between different bacteria strain clades. Trying to find the conserved SNP (core-SNP) cases between the user defined clades. 
 1. extract core CDS in every strains according core CDS reference
 2. multiple sequence alignment of each core CDS for all the strains by the program PRANK or MAFFT
 3. SNP variation analysed by SNP-sites
-4. caculate score
+4. calculate score
 
 Usage: python3 xiao_robot_SNP_analysis_between_groups.py
 
