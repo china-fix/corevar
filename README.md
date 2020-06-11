@@ -29,6 +29,36 @@ Usage: python3 xiao_robot_match_classify_CDS.py
     --CUTOFF (default=0.9, type=float, metavar='DEFAULT 0.9', help="the lowest similarity value which classify as matched")
     
     --OUT (default="xiao_robot_match_classify_CDS", type=str, metavar='directory', help="Output directory name")
+* input/output files format:
+    * input files format:
+        * --REF refered file is a fasta formated genome assemlies.
+        * --CDS refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa'file. Example looks like below:
+    
+    ```
+    >YZU0001_00006 sodC_1
+    ATGAAGCGATTAAGTTTAGCGATGGTGACGCTGCTGGCCTGTGCGGGTGCGCAGGCTGCC
+    AGCGAGAAAGTAGAGATGAATCTGGTGACGGCGCAAGGCGTAGGACAGTCTATCGGCACC
+    GTCGTCATCGATGAAACCGAAGGCGGCTTAAAATTTACCCCACACCTTAAAGCGTTGCCG
+    CCGGGCGAGCATGGTTTTCACATTCATGCCAACGGTAGCTGCCAGCCAGCGATTAAAGAC
+    GGCCAAGCGGTTGCCGCAGAAGCCGCTGGTGGTCATCTGGACCCACAAAATACCGGCAAG
+    CATGAAGGACCGGAAGGCCAGGGGCATCTGGGCGACCTCCCGGTGTTAGTCGTTAATAAT
+    GATGGTATCGCCACCGAACCGGTTACTGCGCCGCGTCTGAAGTCTCTTGATGAAGTGAAA
+    GATAAAGCGCTCATGATCCATGTGGGCGGCGATAACATGTCCGATCAGCCGAAACCGCTC
+    GGCGGCGGCGGAACGCGTTACGCCTGCGGCGTCATTAAATAA
+    >YZU0001_00009 ydhM
+    ATGAATAAGCAAACCGAACATGATACCCGCGAACATCTGCTGGCCACCGGCGAGCAGCTT
+    TGTATGCAACGGGGTTTTACCGGCATGGGGCTTAGCGAATTGCTCAAAACCGCCCAGGTG
+    CCTAAAGGGTCGTTTTATCACTACTTTCGCTCGAAAGAAGCCTTCGGCGTCGCCATGCTT
+    GAGCGACATTACGCCTGCTATCATCAGCGTCTTACGGCGCACTTCACCTCCGGTCCCGGT
+    AATCATCGCGATCGCCTTCTCGCCTGGTATCAGGAAACGTTAAAGCAGTTTTGCCAGCAA
+    GGCGCCATCAGCGGTTGCCTGACGGTGAAACTGTCAGCGGAGGTCTGCGATCTGTCGGAG
+    GATATGCGCTCTACGATGGATAAAGGGGCGCAGGAGATCATGGCACTGCTTGCACGCGCG
+    CTGGAAGATGGCCGTAATAGCCACTGTTTACATTTCACCGGCCAGCCGTTGCCACAGGCG
+    CAGGTACTTTATGCCCTGTGGCTGGGCGCCAATTTGCAGGCCAAAATATCCCGTAGCGCC
+    GCGCCGCTGGAAAATGCGTTGGCGCATGTTAAGACCATCATTGCAACGCCTGAGCAGTAA
+    ```
+    * output file format:
+        * --OUT refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa'file.
 
 ## xiao_robot_extract_CDS.py
 * This python script is modified from the script of xiao_robot_extract_beside_CDS. Script do blastn and extract the CDS in each strain.
@@ -42,6 +72,20 @@ Usage: python3 xiao_robot_extract_CDS.py
     --WASH_LIST (required=True, type=str, metavar='FILENAME', help="the filename (bacteria strain fasta assemblies) list you want to get the CDS")
     
     --OUT (default="xiao_robot_extract_CDS", type=str, metavar='directory', help="Output directory name")
+* input/output files format:
+    * input files format:
+        * strain files: put all the fasta formated assemblies in script's working directory.
+        * --CDS refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa'file.
+        * --WASH_LIST refered file is a list name text file. each name corresponding one strain file's name. Example looks like below
+    
+    ```
+    A.fasta
+    B.fasta
+    C.fasta
+    ...
+    ```
+    * output file format:
+        * --OUT refered directory contain the output files. output files are fasta formated of CDS of the strains.
 
 ## xiao_extract_beside_CDS.py
 * This python script is used to blastn the input CDS fasta file to the assembly database, then get the location and other hsp information. Finally, extract the upstream CDS sequences in every bascteria assemblies.
@@ -57,6 +101,21 @@ Usage: pyhon3 xiao_extract_beside_CDS.py
     --CUT (default=100, type=int, metavar='up-stream cut length', help="the length(bp) you want to cut upstream of the CDS")
     
     --OUT (default="xiao_robot_extract_beside_CDS", type=str, metavar='directory', help="Output directory name")
+* input/output files format:
+    * input files format:
+        * strain files: put all the fasta formated assemblies in script's working directory.
+        * --CDS refered file is a fasta formated file of CDS. the nameing rule is the same as your own Roary output of 'Roary_pan_genome_reference.fa'file.
+        * --WASH_LIST refered file is a list name text file. each name corresponding one strain file's name. Example looks like below
+    
+    ```
+    A.fasta
+    B.fasta
+    C.fasta
+    ...
+    ```
+    * output file format:
+        * --OUT refered directory contain the output files. output files are fasta formated of upstream sequences of the strains.
+    
 
 ## xiao_robot_SNP_analysis_between_groups.py
 * This is a python script used to analysis the SNP between different bacteria strain clades. Trying to find the conserved SNP (core-SNP) cases between the user defined clades. 
@@ -80,6 +139,26 @@ Usage: python3 xiao_robot_SNP_analysis_between_groups.py
     --FAST (action='store_const', const=True, metavar='FAST ALIGNMENT WITH MAFFT', help="this command help to use MAFFT to do a fast alignment")
    
     --OUT (default="xiao_robot_SNP_analysis_between_groups", type=str, metavar='directory', help="Output directory name")
+* input/output files format:
+    * input files format:
+        * strain CDS files: put all the fasta formated CDS of the strains in script's working directory.
+        * --CDS_LIST refered file is a name list text file. Each name corresponding one CDS name, the related name same as your own Roary output CDS name. 
+        * --STRAIN_LIST refered file is a name list text file. Each name corresponding one strain CDS file's name.
+        * --GROUP_1 refered file is a name list text file. Each name corresponding one strain CDS file's name.
+        * --GROUP_2 refered file is a name list text file. Each name corresponding one strain CDS file's name.
+    
+    * output file format:
+        * --OUT refered directory contain the output files. The analysis result recored in the '*.XIAO' file, the format looks like below. ([CDS name] + "---FIX---" + [core SNP number] + "---FIX---" + [passed or error information])
+         ```
+        purG---FIX---0---FIX---###passed
+        melB_1---FIX---5---FIX---###passed
+        elaC---FIX---0---FIX---###passed
+        yhfC---FIX---0---FIX---###passed
+        group_6350---FIX---0---FIX---###passed
+        group_5310---FIX---1---FIX---###passed
+        ...
+        ```
+        
 # Citation
 
  
