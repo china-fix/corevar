@@ -160,5 +160,6 @@ Usage: python3 xiao_robot_SNP_analysis_between_groups.py
         ```
         
 # Citation
-
+Xiao Fei, Qiuchun Li, John Elmerdahl Olsen, Xinan Jiao. A bioinformatic approach to identify core genome difference between Salmonella Pullorum and Salmonella Enteritidis,
+Infection, Genetics and Evolution.Volume 85,2020,104446,ISSN 1567-1348. https://doi.org/10.1016/j.meegid.2020.104446.
  
